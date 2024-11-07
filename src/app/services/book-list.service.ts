@@ -1,11 +1,9 @@
-import { Injectable } from '@angular/core';
+
 import { IBookList } from '../model/book-model';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class BookListService {
-  books: IBookList[] = [
+
+export let books: IBookList[] = [
+ 
     {
       title: 'Between the Water and the Woods',
       author: 'Simone Snaith',
@@ -43,7 +41,6 @@ export class BookListService {
       imageUrl: 'https://m.media-amazon.com/images/I/41pTiNwCDUL._SY466_.jpg',
     },
   ];
-  getBook() {
-    return this.books;
-  }
-}
+  
+  
+

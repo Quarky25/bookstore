@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { IBookList } from '../model/book-model';
-import { BookListService } from '../services/book-list.service';
+import { books } from '../services/book-list.service';
 
 @Component({
   selector: 'app-book-details',
@@ -11,24 +11,17 @@ import { BookListService } from '../services/book-list.service';
 export class BookDetailsComponent {
 book: IBookList = {} as IBookList;
 index: number = 0;
-books: IBookList[] = []
-constructor(private bookService: BookListService, private route: ActivatedRoute) {
-  this.books = this.bookService.getBook();
+
+constructor(private route: ActivatedRoute) {
+  
   this.route.paramMap.subscribe((params: ParamMap) => {
     const id = params.get("id");
     if(id !== null) {
       this.index = +id;
-      this.loadBook(this.index)
+      this.book = books[this.index]
     }
   });
 }
 
-loadBook(index: number): void {
-  const books: any = this.bookService.getBook();
-  if(index >= 0 && index < books.lenght) {
-    this.books = books[index];
-  }else {
-    console.error("Product index out of bounds")
-  }
-}
+
 }
