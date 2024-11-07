@@ -1,0 +1,49 @@
+.book-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.book-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.book-author {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.book-content {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.book-cover {
+  width: 200px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.book-info {
+  flex: 1;
+}
+
+.book-info h3 {
+  margin-top: 1rem;
+}
+
+.book-info p,
+.book-info li {
+  color: #333;
+}
