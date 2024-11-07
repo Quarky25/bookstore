@@ -30,7 +30,7 @@
 
 .book-cover {
   width: 200px;
-  height: auto;
+  height: fit-content;
   border-radius: 4px;
   object-fit: cover;
 }
