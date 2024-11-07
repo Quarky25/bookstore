@@ -29,6 +29,7 @@
 }
 
 .book-cover {
+  margin-top: 2 rem;
   width: 200px;
   height: fit-content;
   border-radius: 4px;
