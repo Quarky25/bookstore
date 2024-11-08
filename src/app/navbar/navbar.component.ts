@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { IBookList } from '../model/book-model';
+import { books } from '../services/book-list.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+ 
+  
 }
