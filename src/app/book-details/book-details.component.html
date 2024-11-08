@@ -12,4 +12,14 @@
       <p>{{ book.description }}</p>
     </div>
   </div>
+
+  <div class="btn-container">
+    <a
+      class="button-add"
+      type="button"
+      routerLink="cart/{{ index }}"
+      (click)="addToCart()"
+      >Add to Cart</a
+    >
+  </div>
 </div>
