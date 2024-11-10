@@ -23,9 +23,10 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {
     }
   });
 }
-addToCart() {
-  window.alert('Your product has been added to the cart!');
-  this.cartService.addToCart(this.book)
+addToCart(book: IBookList): void {
+  window.alert(`"${book.title}" has been added to the cart!`);
+  this.cartService.addToCart({...book, quantity: 1});
+  
 }
 
 

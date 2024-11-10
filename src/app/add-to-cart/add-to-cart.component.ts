@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IBookList } from '../model/book-model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { books } from '../services/book-list.service';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -9,7 +10,7 @@ import { CartService } from '../services/cart.service';
   styleUrl: './add-to-cart.component.css'
 })
 export class AddToCartComponent {
-cartItems: IBookList[] = [];
+cartItems: IBookList[] = books;
 item: IBookList = {} as IBookList
 index: number = 0;
 
@@ -24,16 +25,20 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {
   });
 }
 
+
+
 increaseQuantity(item: IBookList): void {
   item.quantity++;
 }
 
 decreaseQuantity(item: IBookList): void {
- if(item.quantity > 1) item.quantity--;
+ if(item.quantity >= 1) item.quantity--;
 }
 
 removeItem(item: IBookList): void {
   this.cartItems = this.cartItems.filter(cartItem => cartItem.id !== item.id)
+  
+  
 }
 
 calculateTotal(): number {
