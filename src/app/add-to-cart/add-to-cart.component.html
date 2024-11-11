@@ -2,7 +2,7 @@
   <h2>Shopping Cart</h2>
 
   <!-- Cart Item List -->
-@for (item of cart; track $index) {
+  @for (item of cart; track $index) {
   <div class="cart-item">
     <img [src]="item.imageUrl" alt="{{ item.title }}" class="item-image" />
     <div class="item-details">
@@ -17,29 +17,41 @@
       </div>
     </div>
     <button (click)="removeItem(item)" class="remove-button">Remove</button>
-    
   </div>
-}@empty {
+  }@empty {
   <p>Cart is empty</p>
-}
+  }
   <!-- Cart Total -->
   <div class="cart-total">
     <h3>Total: €{{ calculateTotal() | number : "1.2-2" }}</h3>
-    
   </div>
-  <hr>
+  <hr />
 </div>
 
 <form [formGroup]="checkout" (ngSubmit)="checkOutFunction()">
   <div class="mb-3">
     <h1 class="mb-3 text-center">Checkout Form</h1>
-    <label for="exampleName" class="form-label mb-3">Full Name</label>
-  <input type="text" placeholder="Full Name" formControlName="fullName" class="form-control mb-3">
-  <label for="exampleAdress" class="form-label">Your Adress</label>
-<input type="text" placeholder="Adress" formControlName="adress" class="form-control mb-3">
-<label for="exampleEmail" class="form-label">Email Adress</label>
-<input type="email" placeholder="E-Mail Adress" formControlName="eMail" class="form-control mb-3">
-<input type="submit" value="Checkout" class="submitt-button btn-danger">
-</div>
-
+    <label for="exampleName" class="form-label">Full Name</label>
+    <input
+      type="text"
+      placeholder="Full Name"
+      formControlName="fullName"
+      class="form-control mb-3"
+    />
+    <label for="exampleAdress" class="form-label">Your Adress</label>
+    <input
+      type="text"
+      placeholder="Adress"
+      formControlName="address"
+      class="form-control mb-3"
+    />
+    <label for="exampleEmail" class="form-label">Email Adress</label>
+    <input
+      type="email"
+      placeholder="E-Mail Adress"
+      formControlName="eMail"
+      class="form-control mb-3"
+    />
+    <input type="submit" value="Checkout" class="submit-button" />
+  </div>
 </form>

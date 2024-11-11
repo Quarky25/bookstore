@@ -22,10 +22,12 @@ constructor(private cartService: CartService, private formBuilder: FormBuilder) 
 
   createCheckoutForm() {
     this.checkout = this.formBuilder.group({
-      fullName: (''),
-      address: (''),
-      eMail: ('')
-    })  
+      fullName: new FormControl<string> (''),
+      address: new FormControl<string> (''),
+      eMail: new FormControl<string> ('')
+    });
+    
+      
   }
   increaseQuantity(item: IBookList): void {
     item.quantity++;
@@ -45,10 +47,13 @@ constructor(private cartService: CartService, private formBuilder: FormBuilder) 
     this.checkout.reset();
     this.cart = this.cartService.clearCart();
     alert('Your order has been successfully submitted')
-    console.log(`name: ${this.checkout.value} adress: ${this.checkout.value} total: ${this.calculateTotal()}`);
-    
+    this.checkout.valueChanges.subscribe(value => {
+      console.log('New value:', value);
+      
+    });
     
   }
+  
 
   
   calculateTotal(): number {
