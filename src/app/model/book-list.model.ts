@@ -1,5 +1,5 @@
 
-import { IBookList } from '../model/book-model';
+import { IBookList } from './book-model';
 
 
 export let books: IBookList[] = [

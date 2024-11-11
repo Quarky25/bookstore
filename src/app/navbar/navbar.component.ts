@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
-import { IBookList } from '../model/book-model';
-import { books } from '../services/book-list.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, DoCheck } from '@angular/core';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
- 
+export class NavbarComponent implements DoCheck {
+ length: number = 0;
+
+constructor (private cartService: CartService) {}
+
+ngDoCheck(): void {
+  this.length = this.cartService.getLengthOfCart();
+}
   
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IBookList } from '../model/book-model';
-import { books } from '../services/book-list.service';
+import { books } from '../model/book-list.model';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CartService } from '../services/cart.service';
 @Component({
@@ -26,6 +26,8 @@ constructor(private route: ActivatedRoute, private cartService: CartService) {
 addToCart(book: IBookList): void {
   window.alert(`"${book.title}" has been added to the cart!`);
   this.cartService.addToCart({...book, quantity: 1});
+
+  
   
 }
 

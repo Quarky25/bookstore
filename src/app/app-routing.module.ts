@@ -7,7 +7,8 @@ import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 const routes: Routes = [
   {path: "", component: BookListComponent},
   {path: "details/:id", component: BookDetailsComponent},
-  {path: "cart/:id", component: AddToCartComponent}
+  {path: "cart", component: AddToCartComponent},
+  {path: "**", redirectTo: ""}
 ];
 
 @NgModule({
