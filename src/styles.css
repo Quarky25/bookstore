@@ -2,3 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: linear-gradient(135deg, #ffd3a5, #fd6585);
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(135deg, #ffd3a5, #fd6585);
+  }
+}
